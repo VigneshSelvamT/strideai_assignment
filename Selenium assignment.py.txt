@@ -1,0 +1,27 @@
+import time
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+
+driver= webdriver.firefox()
+driver.maximize_window()
+
+driver.get("https://stride.ai/texsie/")
+
+driver.find_element_by_xpath("//label[@style='color]").click()
+time.sleep(2)
+
+driver.find_element_by_id("randomize_sentiment").click()
+time.sleep(2)
+
+driver.find_element_by_id("analyze-sentiment").click()
+time.sleep(2)
+
+
+driver.find_element_by_xpath("//label[@style='color: rgb(0, 0, 0); text-shadow: white 0px 0px 1px; border-bottom: 5px solid transparent; Sentiment Analysis]").click()
+time.sleep(2)
+
+driver.find_element_by_id('text-sentiment').send_keys('some random text')
+driver.find_element_by_id("randomize_identify").click()
+time.sleep(5)
+
+driver.close()
